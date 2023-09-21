@@ -26,8 +26,8 @@ services:
   gateway:
     image: piejin/kittygram_gateway
     env_file: .env
-    ports:
-      - 9000:80
     volumes:
       - static_volume:/static
       - media:/media/
+    ports:
+      - 9000:80
