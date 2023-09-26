@@ -1,51 +1,86 @@
-### Как запустить проект:
+```markdown
+# Kittygram
 
-Клонировать репозиторий и перейти в него в командной строке:
+Kittygram is a web application for sharing cat photos and achievements. It allows users to create profiles for their cats, upload photos, and earn achievements. The project is built using Django and Django REST framework for the backend, as well as React for the frontend, all running in Docker containers.
 
-```
-git clone https://github.com/yandex-praktikum/kittygram_backend.git
-```
+![Kittygram]
 
-```
-cd kittygram_backend
-```
+## Getting Started
 
-Cоздать и активировать виртуальное окружение:
+### Running with Docker
 
-```
-python3 -m venv env
-```
+1. Install [Docker](https://www.docker.com/get-started) on your computer if you haven't already.
 
-* Если у вас Linux/macOS
+2. Clone the Kittygram repository:
 
-    ```
-    source env/bin/activate
-    ```
+   ```bash
+   git clone https://github.com/PIEJIN/kittygram.git
+   cd kittygram
+   ```
 
-* Если у вас windows
+3. Create a `.env` file in the project's root directory and specify the necessary environment variables such as `SECRET_KEY`, `DEBUG`, and PostgreSQL database credentials. Example `.env` file:
 
-    ```
-    source env/scripts/activate
-    ```
+   ```plaintext
+   SECRET_KEY=your_secret_key
+   DEBUG=True
+   POSTGRES_USER=django_user
+   POSTGRES_PASSWORD=django_password
+   POSTGRES_DB=django_db
+   ```
 
-```
-python3 -m pip install --upgrade pip
-```
+4. Start Docker Compose to build and run all containers:
 
-Установить зависимости из файла requirements.txt:
+   ```bash
+   docker-compose up -d
+   ```
 
-```
-pip install -r requirements.txt
-```
+   This will launch containers for the backend, frontend, PostgreSQL database, and web gateway.
 
-Выполнить миграции:
+5. After a successful launch, the application will be accessible at http://localhost:9000/.
 
-```
-python3 manage.py migrate
-```
+6. To stop the application, run the following command:
 
-Запустить проект:
+   ```bash
+   docker-compose down
+   ```
 
-```
-python3 manage.py runserver
+## API Examples
+
+Examples of API requests to the backend:
+
+- Get a list of all cats:
+
+  ```http
+  GET http://localhost:9000/api/cats/
+  ```
+
+- Create a new cat:
+
+  ```http
+  POST http://localhost:9000/api/cats/
+  ```
+
+- Upload a cat's photo:
+
+  ```http
+  POST http://localhost:9000/api/cats/<cat_id>/upload/
+  ```
+
+- Get a list of achievements:
+
+  ```http
+  GET http://localhost:9000/api/achievements/
+  ```
+
+## Technologies Used
+
+- Django
+- Django REST framework
+- React
+- Docker
+- PostgreSQL
+
+## Author
+
+This project is created and maintained by PIEJIN (Radislav Korolev).
 ```
