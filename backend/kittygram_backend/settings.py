@@ -1,10 +1,12 @@
+import os
 from pathlib import Path
 
 from decouple import config
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config('SECRET_KEY', default='django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$')
+SECRET_KEY = os.getenv('SECRET_KEY', default='token')
 
 DEBUG = config('DEBUG_MODE', 'False').lower() == 'true'
 
