@@ -1,16 +1,14 @@
 from pathlib import Path
 
-from decouple import Config
-
-config = Config('.env')
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-secret_key = config.get('SECRET_KEY', default='default_secret_key')
+SECRET_KEY = config('SECRET_KEY', default='key')
 
-DEBUG = config.get('DEBUG_MODE', default='False').lower() == 'true'
+DEBUG = config('DEBUG_MODE', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = config.get('ALLOWED_HOST', default='127.0.0.1, localhost').split(', ')
+ALLOWED_HOSTS = config('ALLOWED_HOST', default='127.0.0.1, localhost').split(', ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
