@@ -1,27 +1,23 @@
 # Kittygram
 
-Kittygram - это веб-приложение для обмена фотографиями и достижениями котиков. Позволяет пользователям создавать профили своих котиков, добавлять фотографии и отмечать достижения. Проект создан с использованием Django и Django REST framework для бэкэнда, а также React для фронтенда, и все это запускается в Docker контейнерах.
+Kittygram is a web application for sharing cat photos and achievements. It allows users to create profiles for their cats, upload photos, and earn achievements. The project is built using Django and Django REST framework for the backend, as well as React for the frontend, all running in Docker containers.
 
-## Инструкция по запуску
+## Getting Started
 
-### Запуск с использованием Docker
+### Running with Docker
 
-## 1. Установите [Docker](https://www.docker.com/get-started) на вашем компьютере, если у вас его еще нет.
+1. Install [Docker](https://www.docker.com/get-started) on your computer if you haven't already.
 
-<<<<<<< HEAD
-## 2. Склонируйте репозиторий Kittygram:
+2. Clone the Kittygram repository:
+
    ```bash
-=======
-2. Склонируйте репозиторий Kittygram:
-   ```
->>>>>>> 3d3f4f3b2ccc8c1710b33fa8e5a66001ca699184
    git clone https://github.com/PIEJIN/kittygram.git
    cd kittygram
    ```
 
-## 3. Создайте файл `.env` в корневой папке проекта и укажите необходимые переменные окружения, такие как `SECRET_KEY`, `DEBUG`, и данные для базы данных PostgreSQL. Пример `.env` файла:
+3. Create a `.env` file in the project's root directory and specify the necessary environment variables such as `SECRET_KEY`, `DEBUG`, and PostgreSQL database credentials. Example `.env` file:
 
-   ```
+   ```plaintext
    SECRET_KEY=your_secret_key
    DEBUG=True
    POSTGRES_USER=django_user
@@ -29,45 +25,51 @@ Kittygram - это веб-приложение для обмена фотогр�
    POSTGRES_DB=django_db
    ```
 
-## 4. Запустите Docker Compose для сборки и запуска всех контейнеров:
+4. Start Docker Compose to build and run all containers:
+
    ```bash
    docker-compose up -d
    ```
 
-   Это запустит контейнеры для бэкэнда, фронтенда, базы данных PostgreSQL и веб-шлюза.
+   This will launch containers for the backend, frontend, PostgreSQL database, and web gateway.
 
-## 5. После успешного запуска, приложение будет доступно по адресу [http://localhost:9000/](http://localhost:9000/).
+5. After a successful launch, the application will be accessible at http://localhost:9000/.
 
-## 6. Чтобы остановить приложение, выполните следующую команду:
+6. To stop the application, run the following command:
+
    ```bash
    docker-compose down
    ```
 
-## Примеры запросов
+## API Examples
 
-Примеры API-запросов к бэкэнду:
+Examples of API requests to the backend:
 
-- Получить список всех котиков:
+- Get a list of all cats:
+
   ```http
   GET http://localhost:9000/api/cats/
   ```
 
-- Создать нового котика:
+- Create a new cat:
+
   ```http
   POST http://localhost:9000/api/cats/
   ```
 
-- Загрузить фотографию котика:
+- Upload a cat's photo:
+
   ```http
   POST http://localhost:9000/api/cats/<cat_id>/upload/
   ```
 
-- Получить список достижений:
+- Get a list of achievements:
+
   ```http
   GET http://localhost:9000/api/achievements/
   ```
 
-## Использованные технологии
+## Technologies Used
 
 - Django
 - Django REST framework
@@ -75,7 +77,6 @@ Kittygram - это веб-приложение для обмена фотогр�
 - Docker
 - PostgreSQL
 
-## Автор
+## Author
 
-Проект создан и поддерживается [PIEJIN (Радислав Королев)](https://github.com/PIEJIN).
-```
+This project is created and maintained by PIEJIN (Radislav Korolev).
