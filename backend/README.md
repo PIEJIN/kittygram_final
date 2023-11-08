@@ -1,9 +1,8 @@
-```markdown
+
 # Kittygram
 
 Kittygram is a web application for sharing cat photos and achievements. It allows users to create profiles for their cats, upload photos, and earn achievements. The project is built using Django and Django REST framework for the backend, as well as React for the frontend, all running in Docker containers.
 
-![Kittygram]
 
 ## Getting Started
 
